@@ -10,13 +10,21 @@
 import { Router, Route, Set } from '@redwoodjs/router'
 
 import FunLayout from 'src/layouts/FunLayout'
+import ScaffoldLayout from 'src/layouts/ScaffoldLayout'
 
 const Routes = () => {
   return (
     <Router>
+      <Set wrap={ScaffoldLayout} title="RunningPerformances" titleTo="runningPerformances" buttonLabel="New RunningPerformance" buttonTo="newRunningPerformance">
+        <Route path="/running-performances/new" page={RunningPerformanceNewRunningPerformancePage} name="newRunningPerformance" />
+        <Route path="/running-performances/{id:Int}/edit" page={RunningPerformanceEditRunningPerformancePage} name="editRunningPerformance" />
+        <Route path="/running-performances/{id:Int}" page={RunningPerformanceRunningPerformancePage} name="runningPerformance" />
+        <Route path="/running-performances" page={RunningPerformanceRunningPerformancesPage} name="runningPerformances" />
+      </Set>
       <Set wrap={FunLayout}>
+        <Route path="/effort/{id:Int}" page={EffortPage} name="effort" />
         <Route path="/about" page={AboutPage} name="about" />
-        <Route path="/start" page={HomePage} name="home" />
+        <Route path="/" page={HomePage} name="home" />
       </Set>
       <Route notfound page={NotFoundPage} />
     </Router>
