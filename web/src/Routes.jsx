@@ -22,9 +22,10 @@ const Routes = () => {
         <Route path="/running-performances" page={RunningPerformanceRunningPerformancesPage} name="runningPerformances" />
       </Set>
       <Set wrap={FunLayout}>
-        <Route path="/effort/{id:Int}" page={EffortPage} name="effort" />
-        <Route path="/about" page={AboutPage} name="about" />
         <Route path="/" page={HomePage} name="home" />
+        <Route path="/about" page={AboutPage} name="about" />
+        <Route path="/contact" page={ContactPage} name="contact" />
+        <Route path="/effort/{id:Int}" page={EffortPage} name="effort" />
       </Set>
       <Route notfound page={NotFoundPage} />
     </Router>
