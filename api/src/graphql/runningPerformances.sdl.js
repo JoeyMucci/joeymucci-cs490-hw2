@@ -8,8 +8,8 @@ export const schema = gql`
   }
 
   type Query {
-    runningPerformances: [RunningPerformance!]! @requireAuth
-    runningPerformance(id: Int!): RunningPerformance @requireAuth
+    runningPerformances: [RunningPerformance!]! @skipAuth
+    runningPerformance(id: Int!): RunningPerformance @skipAuth
   }
 
   input CreateRunningPerformanceInput {
